@@ -1,0 +1,10 @@
+{
+  "algorithme": "Naive Bayes",
+  "exactitude": 0.9874,
+  "precision_spam": 0.9927,
+  "rappel_spam": 0.9128,
+  "f1_spam": 0.951,
+  "nb_entrainement": 4459,
+  "nb_test": 1115,
+  "date_entrainement": "2026-11-11 19:17"
+}
