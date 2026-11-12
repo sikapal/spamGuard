@@ -2,4 +2,26 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Marque -->
+    <color name="primary">#1E3A8A</color>
+    <color name="primary_light">#3B82F6</color>
+    <color name="primary_container">#DBEAFE</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_20">#33FFFFFF</color>
+
+    <!-- Fonds -->
+    <color name="background">#F1F5F9</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="outline">#E2E8F0</color>
+
+    <!-- Texte -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+
+    <!-- Verdicts -->
+    <color name="safe">#16A34A</color>
+    <color name="safe_container">#DCFCE7</color>
+    <color name="danger">#DC2626</color>
+    <color name="danger_container">#FEE2E2</color>
+
 </resources>
