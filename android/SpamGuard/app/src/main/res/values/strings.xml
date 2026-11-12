@@ -1,3 +1,53 @@
 <resources>
     <string name="app_name">SpamGuard</string>
+    <!-- Analyse -->
+    <string name="accueil_titre">Ce SMS est-il une arnaque ?</string>
+    <string name="accueil_sous_titre">Collez le message : notre modèle l’analyse en une seconde.</string>
+    <string name="hint_message">Message à analyser</string>
+    <string name="coller">Coller</string>
+    <string name="essayer_exemple">Essayer un exemple</string>
+    <string name="exemple_arnaque">Arnaque</string>
+    <string name="exemple_normal">Message normal</string>
+    <string name="analyser">Analyser le message</string>
+    <string name="erreur_vide">Saisissez ou collez un message</string>
+    <string name="presse_papiers_vide">Le presse-papiers est vide</string>
+    <string name="reessayer">Réessayer</string>
+    <string name="verdict_spam">Arnaque probable</string>
+    <string name="verdict_fiable">Message fiable</string>
+    <string name="confiance_format">Confiance du modèle : %d %%</string>
+    <string name="conseil_spam">Ne rappelez pas ce numéro, ne cliquez sur aucun lien et ne communiquez jamais votre code PIN ou Mobile Money.</string>
+    <string name="conseil_fiable">Rien de suspect détecté. Restez tout de même prudent si l’on vous demande de l’argent ou un code.</string>
+    <string name="note_modele">Modèle entraîné sur des SMS en anglais (SMS Spam Collection, UCI).</string>
+
+    <string name="texte_exemple_arnaque">WINNER!! As a valued network customer you have been selected to receive a 900 prize reward! To claim call 09061701461. Claim code KL341.</string>
+    <string name="texte_exemple_normal">Hey, are we still meeting at the library at 5pm? Let me know if you’re running late.</string>
+
+    <!-- Menu -->
+    <string name="menu_historique">Historique</string>
+    <string name="menu_modele">À propos du modèle</string>
+
+    <!-- Historique -->
+    <string name="titre_historique">Historique</string>
+    <string name="vider">Tout effacer</string>
+    <string name="historique_vide_titre">Aucune analyse</string>
+    <string name="historique_vide_message">Les messages que vous analysez apparaîtront ici.</string>
+    <string name="pourcentage_format">%d %%</string>
+
+    <!-- Modèle -->
+    <string name="titre_modele">À propos du modèle</string>
+    <string name="section_performances">Performances sur le jeu de test</string>
+    <string name="section_donnees">Données d’entraînement</string>
+    <string name="metrique_exactitude">Exactitude</string>
+    <string name="metrique_precision">Précision spam</string>
+    <string name="metrique_rappel">Rappel spam</string>
+    <string name="metrique_f1">Score F1</string>
+    <string name="aide_exactitude">Messages bien classés</string>
+    <string name="aide_precision">Alertes justifiées</string>
+    <string name="aide_rappel">Arnaques détectées</string>
+    <string name="aide_f1">Équilibre des deux</string>
+    <string name="nb_entrainement_format">%d messages d’entraînement</string>
+    <string name="nb_test_format">%d messages de test</string>
+    <string name="date_format">Entraîné le %s</string>
+    <string name="source_dataset">Source : SMS Spam Collection, Almeida &amp; Hidalgo (2011), UCI Machine Learning Repository, licence CC BY 4.0.</string>
+
 </resources>
