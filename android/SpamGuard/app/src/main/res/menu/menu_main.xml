@@ -9,6 +9,12 @@
         app:iconTint="@color/on_primary"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/action_modele"
+        android:icon="@drawable/ic_info"
+        android:title="@string/menu_modele"
+        app:iconTint="@color/on_primary"
+        app:showAsAction="always" />
 
 
 </menu>

@@ -53,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.action_modele) {
+                startActivity(new Intent(this, ModeleActivity.class));
+                return true;
+            }
+            return false;
+        });
+
 
         // Bouton Coller
         findViewById(R.id.btnColler).setOnClickListener(v -> collerDepuisPressePapiers());
