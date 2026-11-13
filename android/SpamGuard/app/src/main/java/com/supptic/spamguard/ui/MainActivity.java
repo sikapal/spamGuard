@@ -2,6 +2,7 @@ package com.supptic.spamguard.ui;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
@@ -43,18 +44,38 @@ public class MainActivity extends AppCompatActivity {
         progress = findViewById(R.id.progress);
         cardResultat = findViewById(R.id.cardResultat);
 
-        // Menu de la barre (entrées ajoutées aux étapes 5 et 6)
+        // Menu de la barre
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setOnMenuItemClickListener(item -> false);
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.action_historique) {
+                startActivity(new Intent(this, HistoriqueActivity.class));
+                return true;
+            }
+            return false;
+        });
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.action_modele) {
+                startActivity(new Intent(this, ModeleActivity.class));
+                return true;
+            }
+            return false;
+        });
+
 
         // Bouton Coller
         findViewById(R.id.btnColler).setOnClickListener(v -> collerDepuisPressePapiers());
 
         // Exemples
-        findViewById(R.id.chipArnaque).setOnClickListener(v ->
-                tilMessage.getEditText().setText(R.string.texte_exemple_arnaque));
-        findViewById(R.id.chipNormal).setOnClickListener(v ->
-                tilMessage.getEditText().setText(R.string.texte_exemple_normal));
+        findViewById(R.id.chipArnaque).setOnClickListener(v -> {
+            if (tilMessage.getEditText() != null) {
+                tilMessage.getEditText().setText(R.string.texte_exemple_arnaque);
+            }
+        });
+        findViewById(R.id.chipNormal).setOnClickListener(v -> {
+            if (tilMessage.getEditText() != null) {
+                tilMessage.getEditText().setText(R.string.texte_exemple_normal);
+            }
+        });
 
         // ViewModel
         viewModel = new ViewModelProvider(this).get(AnalyseViewModel.class);
@@ -83,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void lancerAnalyse() {
+        if (tilMessage.getEditText() == null) return;
         String texte = tilMessage.getEditText().getText().toString().trim();
         if (texte.isEmpty()) {
             tilMessage.setError(getString(R.string.erreur_vide));
@@ -94,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void afficherResultat(ReponseAnalyse r) {
+        if (r == null) return;
         boolean spam = r.isSpam();
         int couleur = ContextCompat.getColor(this, spam ? R.color.danger : R.color.safe);
         int fond = ContextCompat.getColor(this, spam ? R.color.danger_container : R.color.safe_container);
@@ -124,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         barre.setProgressCompat(0, false);
         barre.setProgressCompat(r.getConfiance(), true);
 
-        // Apparition : fondu + glissement, puis défilement jusqu'à la carte
+        // Apparition
         cardResultat.setVisibility(View.VISIBLE);
         cardResultat.setAlpha(0f);
         cardResultat.setTranslationY(48f);
@@ -138,7 +161,9 @@ public class MainActivity extends AppCompatActivity {
         ClipboardManager cm = getSystemService(ClipboardManager.class);
         if (cm != null && cm.hasPrimaryClip() && cm.getPrimaryClip().getItemCount() > 0) {
             ClipData.Item item = cm.getPrimaryClip().getItemAt(0);
-            tilMessage.getEditText().setText(item.coerceToText(this));
+            if (tilMessage.getEditText() != null) {
+                tilMessage.getEditText().setText(item.coerceToText(this));
+            }
         } else {
             Snackbar.make(findViewById(R.id.racine), R.string.presse_papiers_vide,
                     Snackbar.LENGTH_SHORT).show();
