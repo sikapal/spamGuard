@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.google.gson.JsonParser;
 import com.supptic.spamguard.model.Analyse;
 import com.supptic.spamguard.model.InfosModele;
-import com.supptic.spamguard.model.ResponseAnalyse;
+import com.supptic.spamguard.model.ReponseAnalyse;
 import com.supptic.spamguard.model.RequeteAnalyse;
 import com.supptic.spamguard.network.ApiService;
 import com.supptic.spamguard.network.RetrofitClient;
@@ -32,7 +32,7 @@ public class AnalyseRepository {
 
     public LiveData<List<Analyse>> getHistorique() { return historique; }
 
-    public void analyser(String texte, Rappel<ResponseAnalyse> rappel) {
+    public void analyser(String texte, Rappel<ReponseAnalyse> rappel) {
         executer(api.analyser(new RequeteAnalyse(texte)), resultat -> {
             if (resultat.etat == Resultat.Etat.SUCCES) {
                 // Nouvelle liste (la plus récente en premier) pour que DiffUtil voie le changement

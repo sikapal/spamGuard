@@ -2,19 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_historique"
-        android:icon="@drawable/ic_history"
-        android:title="@string/menu_historique"
-        app:iconTint="@color/on_primary"
-        app:showAsAction="always" />
-
-    <item
-        android:id="@+id/action_modele"
-        android:icon="@drawable/ic_info"
-        android:title="@string/menu_modele"
-        app:iconTint="@color/on_primary"
-        app:showAsAction="always" />
-
+    <!-- Les entrées arrivent aux étapes 5 et 6 -->
 
 </menu>
